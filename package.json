@@ -4,9 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "server": "yarn http-server docs",
-    "dev": "rm -rf docs/* && cp -a alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a beta/dist/. docs/federatedWebpackReactComponents/ && cp public/index.html docs/federatedWebpackReactComponents/index.html",
-    "tableflip": "yarn run clean && yarn run install && yarn run dev"
+
+    "serve:dev": "yarn http-server tmp",
+
+    "build:prod": "rm -rf docs/* && cp -a src/alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a src/beta/dist/. docs/federatedWebpackReactComponents/ && cp src/public/prod.html docs/federatedWebpackReactComponents/index.html",
+
+
+    "build:dev": "rm -rf tmp/* && cp -a src/alpha/dist/. tmp && cp -a src/beta/dist/. tmp && cp src/public/dev.html tmp/index.html"
+
+
+
+
   },
   "dependencies": {
     "@babel/core": "^7.11.6",

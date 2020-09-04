@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
+  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build:prod
 
 PATH: 
   /Users/adam/.rbenv/shims:/Users/adam/.nvm/versions/node/v14.9.0/bin:/Users/adam/.rbenv/shims:/Users/adam/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin
@@ -20,9 +20,17 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "server": "yarn http-server docs",
-      "dev": "rm -rf docs/* && cp public/index.html docs/federatedWebpackReactComponents && cp alpha/dist/* ./docs/federatedWebpackReactComponents",
-      "tableflip": "yarn run clean && yarn run install && yarn run dev"
+  
+      "serve:dev": "yarn http-server tmp",
+  
+      "build:prod": "rm -rf docs/* && cp -a src/alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a src/beta/dist/. docs/federatedWebpackReactComponents/ && cp src/public/index.html docs/federatedWebpackReactComponents/index.html",
+  
+  
+      "build:dev": "rm -rf tmp/* && cp -a src/alpha/dist/. tmp && cp -a src/beta/dist/. tmp && cp public/dev.html tmp/index.html"
+  
+  
+  
+  
     },
     "dependencies": {
       "@babel/core": "^7.11.6",
@@ -4254,9 +4262,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 64
+  Exit code: 1
   Command: sh
-  Arguments: -c rm -rf docs/* && cp public/index.html docs/federatedWebpackReactComponents && cp alpha/dist/* ./docs/federatedWebpackReactComponents
+  Arguments: -c rm -rf docs/* && cp -a src/alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a src/beta/dist/. docs/federatedWebpackReactComponents/ && cp src/public/index.html docs/federatedWebpackReactComponents/index.html
   Directory: /Users/adam/Programming/webpackFederated
   Output:
   
