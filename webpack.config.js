@@ -1,23 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
+const isEnvProduction = process.env.NODE_ENV === 'production';
+const isEnvDevelopment = process.env.NODE_ENV === 'development';
+
 module.exports = {
+  devtool: isEnvDevelopment ? 'source-map' : false,
+  mode: isEnvProduction ? 'production' : 'development',
   entry: "./src/index.js",
-  // output: {
-  //   path: 'dist',
-  //   publicPath: '',
-  //   filename: "index.js"
-  // },
-  // devServer: {
-  //   contentBase: path.join(__dirname, "dist"),
-  //   port: 3001,
-  // },
-  // output: {
-  //   publicPath: "http://localhost:3001/",
-  // },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: "./public/index.html",
-  //   }),
-  // ],
+  module: {
+    rules: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader"
+      }
+    }]
+  }
 };
