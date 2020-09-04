@@ -1,0 +1,21 @@
+{
+  "name": "webpackFederated",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "server": "yarn http-server dist",
+    "dev": "webpack && cp public/index.html dist/index.html && yarn server",
+    "tableflip": "yarn clean && yarn install && yarn dev"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^4.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "5.0.0-beta.29",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}
