@@ -56,21 +56,31 @@ var App = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, a);
     _this.state = {
-      loadbyFederation: false
+      name: "someone"
     };
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(App, [{
+    key: "onChange",
+    value: function onChange(e) {
+      this.setState({
+        name: e.target.value
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        style: {
-          margin: '20px'
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
         fallback: "Loading header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Chunk, null, "Hello this is App 2")));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        type: "text",
+        onChange: this.onChange,
+        value: this.state.name
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Chunk, {
+        name: this.state.name
+      }, "Hello this is App 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "This example shows how a React component can be imported, at run-time. There are 2 webpack bundles in play- \"alpha\" which contains the `App` and \"beta\" which contains the `Chunk` component.  `App` lazily loads `Chunk` through some extra hooks and you can see this as seperate network requests in the debugger. These are 2 completely seperated codebases- in this example, they live in the same repo and are hosted at the same domain but note that the have their own webpack filew and are generated seperately and that one can use this technique to download React components, or any other js bundles for that matter, from other outside sources!")));
     }
   }]);
 
@@ -100,8 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log("Hello index.js");
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('h2', {}, "Hello index.js"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {}, "Hi")]), document.getElementById("root"));
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {}, "Hi")]), document.getElementById("root"));
 
 /***/ })
 

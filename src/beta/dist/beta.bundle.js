@@ -24,8 +24,8 @@ class Chunk extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     super(a);
   }
 
-  render() {
-    return react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [react__WEBPACK_IMPORTED_MODULE_0__.createElement('h3', {}, "Hello Chunk.js")]);
+  render(args) {
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [react__WEBPACK_IMPORTED_MODULE_0__.createElement('h3', {}, "Hello " + this.props.name + ", from Chunk.js"), react__WEBPACK_IMPORTED_MODULE_0__.createElement('pre', {}, JSON.stringify(this.props))]);
   }
 
 }

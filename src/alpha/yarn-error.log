@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run webpack
+  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run pack
 
 PATH: 
   /Users/adam/.rbenv/shims:/Users/adam/.nvm/versions/node/v14.9.0/bin:/Users/adam/.rbenv/shims:/Users/adam/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin
@@ -4257,8 +4257,8 @@ Trace:
   Error: Command failed.
   Exit code: 2
   Command: sh
-  Arguments: -c /Users/adam/Programming/webpackFederated/alpha/node_modules/.bin/webpack
-  Directory: /Users/adam/Programming/webpackFederated/alpha
+  Arguments: -c webpack
+  Directory: /Users/adam/Programming/webpackFederated/src/alpha
   Output:
   
       at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)

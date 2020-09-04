@@ -5,10 +5,11 @@ export default class Chunk extends React.Component{
     super(a);
   }
 
-  render() {
+  render(args) {
     return (
       React.createElement('div', {}, [
-          React.createElement('h3', {}, "Hello Chunk.js"),
+          React.createElement('h3', {}, "Hello " + this.props.name + ", from Chunk.js"),
+          React.createElement('pre', {}, JSON.stringify(this.props)),
       ])
 
     )
