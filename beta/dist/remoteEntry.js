@@ -1,34 +1,43 @@
+var app1;app1 =
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./Chunk.js":
-/*!******************!*\
-  !*** ./Chunk.js ***!
-  \******************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "webpack/container/entry/app1":
+/*!***********************!*\
+  !*** container entry ***!
+  \***********************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: __webpack_require__.d, __webpack_require__.o, __webpack_exports__, __webpack_require__.e, __webpack_require__, __webpack_require__.* */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ Chunk
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var moduleMap = {
+	"./Chunk.js": () => {
+		return __webpack_require__.e("Chunk_js").then(() => () => (__webpack_require__(/*! ./Chunk.js */ "./Chunk.js")));
+	}
+};
+var get = (module) => {
+	return (
+		__webpack_require__.o(moduleMap, module)
+			? moduleMap[module]()
+			: Promise.resolve().then(() => {
+				throw new Error('Module "' + module + '" does not exist in container.');
+			})
+	);
+};
+var init = (shareScope) => {
+	var oldScope = __webpack_require__.S["default"];
+	var name = "default"
+	if(oldScope && oldScope !== shareScope) throw new Error("Container initialization failed as it has already been initialized with a different share scope");
+	__webpack_require__.S[name] = shareScope;
+	return __webpack_require__.I(name);
+};
 
-class Chunk extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  constructor(a) {
-    super(a);
-  }
-
-  render() {
-    return react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [react__WEBPACK_IMPORTED_MODULE_0__.createElement('h3', {}, "Hello Chunk.js")]);
-  }
-
-}
+// This exports getters to disallow modifications
+__webpack_require__.d(exports, {
+	get: () => get,
+	init: () => init
+});
 
 /***/ })
 
@@ -341,18 +350,12 @@ class Chunk extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/react/react": () => loadStrictVersionCheckFallback("default", "react", [1,16,13,1], () => __webpack_require__.e("vendors-node_modules_react_index_js").then(() => () => __webpack_require__(/*! react */ "./node_modules/react/index.js")))
 /******/ 		};
-/******/ 		var initialConsumes = ["webpack/sharing/consume/default/react/react"];
-/******/ 		initialConsumes.forEach((id) => {
-/******/ 			__webpack_modules__[id] = (module) => {
-/******/ 				// Handle case when module is used sync
-/******/ 				installedModules[id] = 0;
-/******/ 				delete __webpack_module_cache__[id];
-/******/ 				var factory = moduleToHandlerMapping[id]();
-/******/ 				if(typeof factory !== "function") throw new Error("Shared module is not available for eager consumption: " + id);
-/******/ 				module.exports = factory();
-/******/ 			}
-/******/ 		});
-/******/ 		var chunkMapping = {};
+/******/ 		// no consumes in initial chunks
+/******/ 		var chunkMapping = {
+/******/ 			"Chunk_js": [
+/******/ 				"webpack/sharing/consume/default/react/react"
+/******/ 			]
+/******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
 /******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
 /******/ 				chunkMapping[chunkId].forEach((id) => {
@@ -388,7 +391,7 @@ class Chunk extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// Promise = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"main": 0
+/******/ 			"app1": 0
 /******/ 		};
 /******/ 		
 /******/ 		
@@ -475,9 +478,9 @@ class Chunk extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
+/******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
-/******/ 	// Load entry module
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./Chunk.js");
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__("webpack/container/entry/app1");
 /******/ })()
 ;

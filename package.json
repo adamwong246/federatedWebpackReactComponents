@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "server": "yarn http-server dist",
-    "dev": "cp public/index.html dist/index.html && cp alpha/dist/alpha.bundle.js ./dist/alpha.bundle.js && cp beta/dist/beta.bundle.js ./dist/beta.bundle.js",
+    "dev": "rm -rf dist/* && cp public/index.html dist/index.html && cp alpha/dist/* ./dist/&& cp beta/dist/* ./dist/",
     "tableflip": "yarn run clean && yarn run install && yarn run dev"
   },
   "dependencies": {
