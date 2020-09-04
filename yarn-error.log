@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
+  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js server
 
 PATH: 
-  /Users/adam/.rbenv/shims:/Users/adam/.nvm/versions/node/v14.9.0/bin:/Users/adam/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin
+  /Users/adam/.rbenv/shims:/Users/adam/.nvm/versions/node/v14.9.0/bin:/Users/adam/.rbenv/shims:/Users/adam/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin
 
 Yarn version: 
   1.5.1
@@ -20,9 +20,8 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "pack": "webpack",
       "server": "yarn http-server dist",
-      "dev": "webpack && cp public/index.html dist/index.html && yarn run server",
+      "dev": "cp public/index.html dist/index.html && cp alpha/dist/alpha.bundle.js ./dist/alpha.bundle.js && cp beta/dist/beta.bundle.js ./dist/beta.bundle.js",
       "tableflip": "yarn run clean && yarn run install && yarn run dev"
     },
     "dependencies": {
@@ -4255,9 +4254,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 1
   Command: sh
-  Arguments: -c webpack && cp public/index.html dist/index.html && yarn run server
+  Arguments: -c yarn http-server dist
   Directory: /Users/adam/Programming/webpackFederated
   Output:
   

@@ -7,7 +7,10 @@ const isEnvDevelopment = process.env.NODE_ENV === 'development';
 module.exports = {
   devtool: isEnvDevelopment ? 'source-map' : false,
   mode: isEnvProduction ? 'production' : 'development',
-  entry: "./src/index.js",
+  entry: "./Chunk.js",
+  output: {
+    filename: "beta.bundle.js"
+  },
   module: {
     rules: [{
       test: /\.(js|jsx)$/,

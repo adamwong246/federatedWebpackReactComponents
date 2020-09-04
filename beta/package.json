@@ -1,12 +1,10 @@
 {
-  "name": "webpackFederated",
+  "name": "webpackFederated-beta",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "server": "yarn http-server dist",
-    "dev": "cp public/index.html dist/index.html && cp alpha/dist/alpha.bundle.js ./dist/alpha.bundle.js && cp beta/dist/beta.bundle.js ./dist/beta.bundle.js",
-    "tableflip": "yarn run clean && yarn run install && yarn run dev"
+    "pack": "webpack"
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
