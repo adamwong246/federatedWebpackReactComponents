@@ -47,15 +47,21 @@ var App = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(App);
 
   function App(a) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _super.call(this, a);
+    _this = _super.call(this, a);
+    _this.state = {
+      loadbyFederation: false
+    };
+    return _this;
   }
 
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('h2', {}, "Hello App.js");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('div', {}, [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('h2', {}, "Hello App.js"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement('button', {}, "click me to load a react compoent via webpack federation")]);
     }
   }]);
 

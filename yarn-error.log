@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run dev
+  /Users/adam/.nvm/versions/node/v14.9.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
 
 PATH: 
   /Users/adam/.rbenv/shims:/Users/adam/.nvm/versions/node/v14.9.0/bin:/Users/adam/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/adam/.rvm/bin:/Users/adam/.rvm/bin
