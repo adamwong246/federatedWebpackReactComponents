@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve:dev": "yarn http-server tmp",
-    "build:prod": "rm -rf docs/* && cp -a src/alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a src/beta/dist/. docs/federatedWebpackReactComponents/ && cp src/public/prod.html docs/federatedWebpackReactComponents/index.html",
+    "build:prod": "rm -rf docs/* && cp -a src/alpha/dist/. docs/ && cp -a src/beta/dist/. docs/ && cp src/public/prod.html docs/index.html",
+
     "build:dev": "rm -rf tmp/* && cp -a src/alpha/dist/. tmp && cp -a src/beta/dist/. tmp && cp src/public/dev.html tmp/index.html"
   },
   "dependencies": {
