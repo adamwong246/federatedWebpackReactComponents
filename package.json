@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "server": "yarn http-server dist",
-    "dev": "rm -rf dist/* && cp public/index.html dist/index.html && cp alpha/dist/* ./dist/&& cp beta/dist/* ./dist/",
+    "server": "yarn http-server docs",
+    "dev": "rm -rf docs/* && cp -a alpha/dist/. docs/federatedWebpackReactComponents/ && cp -a beta/dist/. docs/federatedWebpackReactComponents/ && cp public/index.html docs/federatedWebpackReactComponents/index.html",
     "tableflip": "yarn run clean && yarn run install && yarn run dev"
   },
   "dependencies": {

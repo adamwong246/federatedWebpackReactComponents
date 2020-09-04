@@ -20,20 +20,8 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "server": "yarn http-server dist",
-      "dev": "
-  
-      rm -rf dist/* &&
-      cp public/index.html dist/index.html &&
-      cp alpha/dist/alpha.bundle.js ./dist/alpha.bundle.js &&
-      cp alpha/dist/vendors-node_modules_react_index_js.alpha.bundle.js ./dist/vendors-node_modules_react_index_js.alpha.bundle.js &&
-      cp alpha/dist/vendors-node_modules_react-dom_index_js.alpha.bundle.js ./dist/vendors-node_modules_react-dom_index_js.alpha.bundle.js &&
-      cp alpha/dist/bootstrap_js.alpha.bundle.js ./dist/bootstrap_js.alpha.bundle.js &&
-  
-      cp beta/dist/vendors-node_modules_react_index_js.beta.bundle.js ./dist/vendors-node_modules_react_index_js.beta.bundle.js &&
-      cp beta/dist/beta.bundle.js ./dist/beta.bundle.js &&
-      cp beta/dist/remoteEntry.js ./dist/remoteEntry.js",
-  
+      "server": "yarn http-server docs",
+      "dev": "rm -rf docs/* && cp public/index.html docs/federatedWebpackReactComponents && cp alpha/dist/* ./docs/federatedWebpackReactComponents",
       "tableflip": "yarn run clean && yarn run install && yarn run dev"
     },
     "dependencies": {
@@ -4265,10 +4253,16 @@ Lockfile:
       yargs-parser "^13.1.2"
 
 Trace: 
-  SyntaxError: /Users/adam/Programming/webpackFederated/package.json: Unexpected token 
-   in JSON at position 162
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:1036:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
+  Error: Command failed.
+  Exit code: 64
+  Command: sh
+  Arguments: -c rm -rf docs/* && cp public/index.html docs/federatedWebpackReactComponents && cp alpha/dist/* ./docs/federatedWebpackReactComponents
+  Directory: /Users/adam/Programming/webpackFederated
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:314:20)
+      at maybeClose (internal/child_process.js:1047:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5)
